@@ -41,3 +41,5 @@ User.init(
 );
 
 module.exports = User;
+
+console.log ("user models sucessful")
