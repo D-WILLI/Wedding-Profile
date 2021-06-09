@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
+  <link rel="stylesheet" href="/css/profile.css">
+  <title>Personal WebSite</title>
+</head>
+
+<body>
+  <button id="logout">Log Out</button>
+  <div class="box">
+    <img src="/images/wedding-picture.jpeg" alt="" class="box-img">
+   
+    {{#if has_profile}}
+    <form action="/api/profiles/update" method="post">
+    {{else}}
+    <form action="/api/profiles" method="post">
+    {{/if}}
+      <input type="text" placeholder="Lastname" name="name" value="{{name}}" />
+      <input type="text" placeholder="1/1/2021" name="wedding_date" value="{{wedding_date}}" />
+      
+      <input type="text" placeholder="Winter Wonderland" name="theme" value="{{theme}}" />
+      <input type="text" placeholder="Band" name="band" value="{{band}}" />
+      <input type="text" placeholder="Chicken" name="main_dish" value="{{main_dish}}" />
+
+      <input type="hidden" value="{{id}}" name="profile_id" />
+
+      <button>Update</button>
+</form>
+
+
+  </div>
+</body>
+</html>

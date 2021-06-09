@@ -1,15 +1,4 @@
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <title>project 2</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
   <div class="full-page">
     <div class="navigation-bar">
       <div class="logo">
@@ -26,21 +15,21 @@
     <div id="login-form" class="login-page hide">
       <div class="form-box">
         <div class="form">
-          <form class="login-form">
+          <form class="login-form" action="/api/users/login" method="post">
               <h1 class="main-heading">login Form</h1>
-           <input type="text" placeholder="user name">
-            <input type="password" placeholder="password">
+           <input type="text" placeholder="example@example.com" name="email" />
+            <input type="password" placeholder="password" name="password" />
             <button>LOGIN</button>
             <p class="asking">Not Signed Up? <a href="#">Sign Up</a>
             </p>
           </form> 
-          <form class="register-form">
+          <form class="register-form" action="/api/users" method="post">
             
               <h1 class="main-heading">Register Form</h1>
            
-            <input type="text" placeholder="username">
-            <input type="text" placeholder="email">
-            <input type="password" placeholder="password">
+            <input type="text" placeholder="email" name="email" value="batistaj651@gmail.com" />
+            <input type="text" placeholder="name" name="name" value="john batista" />
+            <input type="password" placeholder="password" name="password" value="packers123" />
             <button class="register-btn">Register</button>
             <p class="asking">Already Registerd? <a href="#">Login</a>
             </p>
@@ -55,7 +44,4 @@
       Shanisha Mitchell @gmail.com 
     </p>
   </footer>
-  <script src="script.js"></script>
-</body>
 
-</html>
