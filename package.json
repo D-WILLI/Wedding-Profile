@@ -1,0 +1,29 @@
+{
+  "name": "Wedding-Profile",
+  "version": "1.0.0",
+  "description": "Project Two testing testing",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nishyo-coder/Wedding-Profile.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nishyo-coder/Wedding-Profile/issues"
+  },
+  "homepage": "https://github.com/Nishyo-coder/Wedding-Profile#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  }
+}
