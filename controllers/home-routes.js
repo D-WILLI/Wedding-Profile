@@ -8,8 +8,8 @@ router.get('/', async (req, res) => {
     const dbGalleryData = await Gallery.findAll({
       include: [
         {
-        model: Couples,
-          attributes: ['filename', 'description', 'name', 'theme'],
+        model: Couples, 
+          attributes: ['description', 'name', 'theme'],
         },
       ],
     });

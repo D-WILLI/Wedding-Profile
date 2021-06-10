@@ -25,7 +25,7 @@ Gallery.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Gallery',
+    modelName: 'gallery',
   }
 );
 
