@@ -15,10 +15,7 @@ Gallery.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    theme: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
+    
     wedding_date: {
       type: DataTypes.DATE,
       allowNull: false,
@@ -28,7 +25,7 @@ Gallery.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'gallery',
+    modelName: 'Gallery',
   }
 );
 

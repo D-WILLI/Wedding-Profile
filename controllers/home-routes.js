@@ -1,14 +1,26 @@
 const router = require('express').Router();
-const { Gallery, Couple } = require('../models');
+const { Gallery, Couples } = require('../models');
 
-// GET one couple
-router.get('/couple/:id', async (req, res) => {
+// GET all galleries for homepage
+router.get('/', async (req, res) => {
+    console.log(req.body)
   try {
-    const CoupleData = await Couple.findByPk(req.params.id);
+    const dbGalleryData = await Gallery.findAll({
+      include: [
+        {
+        model: Couples,
+          attributes: ['filename', 'description', 'name', 'theme'],
+        },
+      ],
+    });
 
-    const couple = CoupleData.get({ plain: true });
+    const galleries = dbGalleryData.map((gallery) =>
+      gallery.get({ plain: true })
+    );
 
-    res.render('couple', { couple });
+    res.render('homepage', {
+      galleries,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
