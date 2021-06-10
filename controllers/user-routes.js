@@ -11,7 +11,8 @@ router.post('/', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      
+      res.redirect('/profile')
     });
   } catch (err) {
     res.status(400).json(err);
@@ -54,6 +55,7 @@ try {
   const usersData = await User.findAll({});
   const users = usersData.map((user) => user.get({ plain: true }));
   res.json(users);
+  
 } catch (err) {
   res.status(500).json(err);
 }

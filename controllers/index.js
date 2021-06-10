@@ -31,28 +31,18 @@ router.get('/profile', async (req, res) => {
     console.log(profileData)
 
     let profile = {
-
     }
-
     if (profileData === null) {
-
       profile = {
-
         name: "",
         mainDish: "",
         band: "",
         theme: "",
         wedding_date: ""
-        
-
       }
-
     } else {
-
       profile = profileData.get({ plain: true });
-
       console.log(profile)
-
     }
 
     
@@ -67,8 +57,6 @@ router.get('/profile', async (req, res) => {
     console.log(err)
     res.status(500).json(err);
   }
-
-
 })
 
 
