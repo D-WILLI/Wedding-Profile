@@ -11,15 +11,20 @@ Gallery.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    Couple: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    
-    wedding_date: {
+
+    Wedding_date: {
       type: DataTypes.DATE,
       allowNull: false,
     },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  
   },
   {
     sequelize,
