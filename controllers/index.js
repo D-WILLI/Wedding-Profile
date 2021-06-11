@@ -2,8 +2,10 @@
 const router = require('express').Router();
 const userRoutes = require('./user-routes');
 const profileRoutes = require('./profile-routes');
-const { User, Profile } = require('../models')
+const { User, Profile ,} = require('../models');
+const galleryRoutes = require('./gallery-routes');
 
+router.use('/gallery', galleryRoutes)
 router.use('/api/users', userRoutes)
 router.use('/api/profiles', profileRoutes)
 
