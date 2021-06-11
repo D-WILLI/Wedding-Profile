@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Gallery, Couple } = require('../models');
+const sequelize = require('../config/connection');
 
 // GET one couple
 router.get('/couple/:id', async (req, res) => {

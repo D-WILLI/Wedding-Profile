@@ -1,0 +1,28 @@
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
+  <link rel="stylesheet" href="/css/profile.css">
+  <title>Personal WebSite</title>
+</head>
+
+<button  id="logout" type="button" class="btn btn-secondary">Log Out</button>
+{{#each profiles as |profile|}}
+
+<div class="box">
+    <img src="/images/wedding-picture.jpeg" alt="" class="box-img">
+<form action="/api/profiles" method="post">
+      <input  readonly type="text" placeholder="Lastname" name="name" value="{{profile.name}}" />
+      <input  readonly type="text" placeholder="Date" name="wedding_date" value="{{wedding_date}} " />
+      
+      <input  readonly type="text" placeholder="Theme" name="theme" value="{{theme}} " />
+      <input  readonly type="text" placeholder="Band" name="band" value="{{band}} " />
+      <input readonly type="text" placeholder="Main dish" name="main_dish" value="{{main_dish}} " />
+
+      <input type="hidden" value="{{id}}" name="profile_id" />
+
+      
+</form>
+</div>
+
+{{/each}}

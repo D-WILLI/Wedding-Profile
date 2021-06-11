@@ -13,7 +13,10 @@
   <button  id="logout" type="button" class="btn btn-secondary">Log Out</button>
   <div class="box">
     <img src="/images/wedding-picture.jpeg" alt="" class="box-img">
-   
+   <br>
+   <br>
+   <br>
+   <br>
     {{#if has_profile}}
     <form action="/api/profiles/update" method="post">
     {{else}}
@@ -28,7 +31,7 @@
 
       <input type="hidden" value="{{id}}" name="profile_id" />
 
-      <button type="button" class="btn btn-secondary">Update</button>
+      <button type="submit" class="btn btn-secondary">Update</button>
 </form>
 
 
