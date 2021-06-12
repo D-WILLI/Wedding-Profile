@@ -1,28 +1,66 @@
+<!DOCTYPE html>
+<html>
+
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
-  <link rel="stylesheet" href="/css/profile.css">
-  <title>Personal WebSite</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Be sure to update the style link to see changes -->
+  <link rel="stylesheet" href="gallery.css">
+  <title>gallery</title>
 </head>
+<body>
+  <h1 class="glow">Wander Through Our Weddings</h1>
 
-<button  id="logout" type="button" class="btn btn-secondary">Log Out</button>
+<nav class="navbar navbar-expand-lg navbar-light custom-color">
+    <a class="navbar-brand" href="/" style="color:goldenrod" >Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      
+
+    </div>
+  </nav>
 {{#each profiles as |profile|}}
 
-<div class="box">
-    <img src="/images/wedding-picture.jpeg" alt="" class="box-img">
-<form action="/api/profiles" method="post">
-      <input  readonly type="text" placeholder="Lastname" name="name" value="{{profile.name}}" />
-      <input  readonly type="text" placeholder="Date" name="wedding_date" value="{{wedding_date}} " />
+<!-- added gold to the word comment -->
+<div class="card" style="color:goldenrod">
+
+      <div class="image">
+        <img src="images/wedding-picture.jpeg">
+      </div>
+      <div class="title">
+        <form action="/api/profiles" method="post">
+          <input readonly type="text" placeholder="Lastname" name="name" value="{{profile.name}}" />
+          <input readonly type="text" placeholder="Date" name="wedding_date" value="{{wedding_date}} " />
+
+          <input readonly type="text" placeholder="Theme" name="theme" value="{{theme}} " />
+          <input readonly type="text" placeholder="Band" name="band" value="{{band}} " />
+          <input readonly type="text" placeholder="Main dish" name="main_dish" value="{{main_dish}} " />
+       <input readonly type="text" placeholder="description" name="description" value="{{description}}" />
+          <input type="hidden" value="{{id}}" name="profile_id" />
+
+
+        </form>
+      </div>
+      <div class="des">
+        <p>comments</p>
+
+      </div>
+    </div>
+
+    {{/each}}
+    {{#if logged_in}}
+        
+        <button  id="logout" type="button" class="btn btn-secondary" style="color:goldenrod">Log Out</button>
+        {{/if}}
+        
+        <!-- add footer with glow feature -->
+        </div>
+        <div class="footer glows">
+          <p>Thank you for sharing your journey with us.</p>
+      </body>
       
-      <input  readonly type="text" placeholder="Theme" name="theme" value="{{theme}} " />
-      <input  readonly type="text" placeholder="Band" name="band" value="{{band}} " />
-      <input readonly type="text" placeholder="Main dish" name="main_dish" value="{{main_dish}} " />
-
-      <input type="hidden" value="{{id}}" name="profile_id" />
-
+      </html>
       
-</form>
-</div>
-
-{{/each}}
