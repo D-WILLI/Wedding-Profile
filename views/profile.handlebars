@@ -28,6 +28,17 @@
 
       <input type="hidden" value="{{id}}" name="profile_id" />
 
+      {{!-- // file upload for images  --}}
+        <form method="POST" action="/upload-profile-pic" enctype="multipart/form-data">
+    <div>
+        <label>Select your profile picture:</label>
+        <input type="file" name="profile_pic" />
+    </div>
+    <div>
+        <input type="submit" name="btn_upload_profile_pic" value="Upload" />
+    </div>
+    {{!-- end of file upload  --}}
+</form> 
       <button type="button" class="btn btn-secondary">Update</button>
 </form>
 
