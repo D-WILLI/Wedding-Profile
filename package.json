@@ -1,19 +1,10 @@
 {
   "name": "Wedding-Profile",
   "version": "1.0.0",
-<<<<<<< HEAD
-  "description": "Project Two testing testing",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "seed": "node seeds/index.js"
-=======
   "description": "Project Two",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> 46b27b8fbb01e128ec94916455b1635f3d6dd4e2
   },
   "repository": {
     "type": "git",
@@ -25,16 +16,10 @@
   "bugs": {
     "url": "https://github.com/Nishyo-coder/Wedding-Profile/issues"
   },
+  
   "homepage": "https://github.com/Nishyo-coder/Wedding-Profile#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
-<<<<<<< HEAD
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.3.2",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.2.5",
-=======
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -42,7 +27,6 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.7",
->>>>>>> 46b27b8fbb01e128ec94916455b1635f3d6dd4e2
     "sequelize": "^6.6.2"
   }
 }
