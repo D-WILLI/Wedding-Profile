@@ -4,4 +4,5 @@ loginBtn.addEventListener('click',function(event){
   event.preventDefault();
   loginPage.classList.remove('hide');
 })
+
 $('.asking a').click(function(){$('form').animate({height:'toggle',opacity:'toggle'},'slow');});
