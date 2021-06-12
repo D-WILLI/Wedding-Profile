@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
+  <link rel="stylesheet" href="/css/profile.css">
+  <title>Personal WebSite</title>
+</head>
+
+<body>
+  <button  id="logout" type="button" class="btn btn-secondary">Log Out</button>
+  <div class="box">
+    <img src="/images/wedding-picture.jpeg" alt="" class="box-img">
+   <br>
+   <br>
+   <br>
+   <br>
+    {{#if has_profile}}
+    <form action="/api/profiles/update" method="post">
+    {{else}}
+    <form action="/api/profiles" method="post">
+    {{/if}}
+      <input type="text" placeholder="Lastname" name="name" value="{{name}}" />
+      <input type="text" placeholder="Date" name="wedding_date" value="{{wedding_date}}" />
+      
+      <input type="text" placeholder="Theme" name="theme" value="{{theme}}" />
+      <input type="text" placeholder="Band" name="band" value="{{band}}" />
+      <input type="text" placeholder="Main dish" name="main_dish" value="{{main_dish}}" />
+
+      <input type="hidden" value="{{id}}" name="profile_id" />
+
+      <button type="submit" class="btn btn-secondary">Update</button>
+</form>
+
+
+  </div>
+</body>
+</html>
