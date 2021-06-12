@@ -33,6 +33,7 @@ router.post('/update', async (req, res) => {
       theme: req.body.theme,
       main_dish: req.body.main_dish,
       band: req.body.band,
+      description:req.body.description
     },
     {
       where: {
