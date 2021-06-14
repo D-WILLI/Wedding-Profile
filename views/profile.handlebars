@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
-
+{{!-- be sure to update the style link --}}
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
-  <link rel="stylesheet" href="/css/profile.css">
-  <title>Personal WebSite</title>
+  <link rel="stylesheet" href="profile.css">
+  <title>Our Day</title>
 </head>
 
 <body>
-  <button id="logout" type="button" class="btn btn-secondary">Log Out</button>
+{{!-- added glow class --}}
+  <h1 class="glow">Our Special Day</h1>
+
+{{!-- change the image link --}}
+  <button  id="logout" type="button" class="btn btn-secondary"style="color:goldenrod">Log Out</button>
   <div class="box">
     <img src="/images/wedding-picture.jpeg" alt="" class="box-img">
     <br>
@@ -31,7 +35,8 @@
         <input type="text" placeholder="description" name="description" value="{{description}}" />
 
 
-        <input type="hidden" value="{{id}}" name="profile_id" />
+      <button type="submit" class="btn btn-secondary"style="color:goldenrod">POST</button>
+</form>
 
         <button type="submit" class="btn btn-secondary">Update</button>
 
@@ -39,6 +44,7 @@
       
       <li><a href="/gallery">
           <button class="btn btn-secondary" type="submit">Post</button></a></li>
+
 
   </div>
 

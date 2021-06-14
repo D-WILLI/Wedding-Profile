@@ -1,13 +1,19 @@
+<!DOCTYPE html>
+<html>
+
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="/css/gallery.css">
-  <title>project2</title>
+  <!-- Be sure to update the style link to see change -->
+  <link rel="stylesheet" href="public/css/gallery.css">
+  <title>gallery</title>
 </head>
+<body>
+  <h1 class="glow">Wander Through Our Weddings</h1>
 
 <nav class="navbar navbar-expand-lg navbar-light custom-color">
-    <a class="navbar-brand" href="/">Home</a>
+    <a class="navbar-brand" href="/" style="color:goldenrod" >Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     </button>
@@ -18,8 +24,8 @@
   </nav>
 {{#each profiles as |profile|}}
 
-
-<div class="card">
+<!-- added gold to the word comment -->
+<div class="card" style="color:goldenrod">
 
       <div class="image">
         <img src="images/wedding-picture.jpeg">
@@ -43,10 +49,18 @@
 
       </div>
     </div>
+
     {{/each}}
     {{#if logged_in}}
         
-        <button  id="logout" type="button" class="btn btn-secondary">Log Out</button>
+        <button  id="logout" type="button" class="btn btn-secondary" style="color:goldenrod">Log Out</button>
         {{/if}}
-
-
+        
+        <!-- add footer with glow feature -->
+        </div>
+        <div class="footer glows">
+          <p>Thank you for sharing your journey with us.</p>
+      </body>
+      
+      </html>
+      
