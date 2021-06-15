@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html>
 {{!-- be sure to update the style link --}}
+
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
-  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="/css/profile.css">
   <title>Our Day</title>
 </head>
 
 <body>
-{{!-- added glow class --}}
+  {{!-- added glow class --}}
   <h1 class="glow">Our Special Day</h1>
 
-{{!-- change the image link --}}
-  <button  id="logout" type="button" class="btn btn-secondary"style="color:goldenrod">Log Out</button>
+  {{!-- change the image link --}}
+  <button id="logout" type="button" class="btn btn-secondary" style="color:goldenrod">Log Out</button>
+
   <div class="box">
-    <img src="/images/wedding-picture.jpeg" alt="" class="box-img">
+    <br>
+    <div class="box-img" id="photo"></div>
     <br>
     <br>
     <br>
     <br>
+    <form action="#" method="post">
+          <input type="url" name="imglink" id="imglink" placeholder="        Image URL " /><br>
+          <input type="button" value="Show Image" id="btn1" />
+        </form>
     {{#if has_profile}}
     <form action="/api/profiles/update" method="post">
       {{else}}
       <form action="/api/profiles" method="post">
         {{/if}}
+        <input type="text" name="image_url" id="imgurl" class="hidden">
         <input type="text" placeholder="Lastname" name="name" value="{{name}}" />
         <input type="text" placeholder="Date" name="wedding_date" value="{{wedding_date}}" />
         <input type="text" placeholder="Theme" name="theme" value="{{theme}}" />
@@ -35,18 +43,28 @@
         <input type="text" placeholder="description" name="description" value="{{description}}" />
 
 
-      <button type="submit" class="btn btn-secondary"style="color:goldenrod">POST</button>
-</form>
 
+        <input type="hidden" value="{{id}}" name="profile_id" />
         <button type="submit" class="btn btn-secondary">Update</button>
-
+        {{!-- <button type="submit" class="btn btn-secondary" style="color:goldenrod">POST</button> --}}
       </form>
-      
-      <li><a href="/gallery">
-          <button class="btn btn-secondary" type="submit">Post</button></a></li>
+
+      {{!-- <button type="submit" class="btn btn-secondary">Update</button> --}}
+
+      {{!--
+    </form> --}}
+
+    <li><a href="/gallery">
+        <button class="btn btn-secondary" style="color:goldenrod" type="submit">Post</button></a></li>
 
 
   </div>
+  <script>
+    document.getElementById('btn1').addEventListener('click', function () {
+      document.getElementById('photo').innerHTML = '<img style="width:300; margin:auto;" src="' + document.getElementById('imglink').value + '" alt="Image" />'; 
+      document.getElementById("imgurl").value = document.getElementById("imglink").value
+    });
+  </script>
 
 </body>
 
