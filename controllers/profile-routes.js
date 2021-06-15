@@ -4,7 +4,7 @@ const { Profile } = require('../models');
 
 
 router.post('/', async (req, res) => {
-
+console.log(req.body)
   console.log("Create Profile")
   try {
     const profileData = await Profile.create({
@@ -33,7 +33,8 @@ router.post('/update', async (req, res) => {
       theme: req.body.theme,
       main_dish: req.body.main_dish,
       band: req.body.band,
-      description:req.body.description
+      description:req.body.description,
+      image_url:req.body.image_url
     },
     {
       where: {
