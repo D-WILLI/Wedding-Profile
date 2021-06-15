@@ -34,7 +34,8 @@ router.post('/update', async (req, res) => {
       main_dish: req.body.main_dish,
       band: req.body.band,
       description:req.body.description,
-      image_url:req.body.image_url
+      image_url:req.body.image_url,
+      date_end:req.body.date_end
     },
     {
       where: {
