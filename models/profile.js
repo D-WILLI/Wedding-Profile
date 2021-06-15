@@ -38,6 +38,10 @@ Profile.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    date_end: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

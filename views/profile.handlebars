@@ -41,11 +41,12 @@
         <input type="text" placeholder="Band" name="band" value="{{band}}" />
         <input type="text" placeholder="Main dish" name="main_dish" value="{{main_dish}}" />
         <input type="text" placeholder="description" name="description" value="{{description}}" />
-
+        <input type="date" name="date_end" id="date_end" value="{{date_end}}">
 
 
         <input type="hidden" value="{{id}}" name="profile_id" />
         <button type="submit" class="btn btn-secondary">Update</button>
+        
         {{!-- <button type="submit" class="btn btn-secondary" style="color:goldenrod">POST</button> --}}
       </form>
 
@@ -60,11 +61,16 @@
 
   </div>
   <script>
+    $('[name="date_end"]').on('change',function() {
+  var dataEnd = $(this).val();
+  console.log((new Date(dataEnd)).getTime());
+})
     document.getElementById('btn1').addEventListener('click', function () {
       document.getElementById('photo').innerHTML = '<img style="width:300; margin:auto;" src="' + document.getElementById('imglink').value + '" alt="Image" />'; 
       document.getElementById("imgurl").value = document.getElementById("imglink").value
     });
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </body>
 
